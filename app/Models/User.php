@@ -48,10 +48,7 @@ class User extends Authenticatable
     }
 
     public function schedule(){
-        return $this->hasMany(Schedule::class, 'patient_id', 'id')->orderByDesc('id');
+        return $this->hasMany(Schedule::class, 'doctor', 'id')->orderByDesc('id');
     }
 
-    public function poliklinik(){
-        return $this->hasOne(Poliklink::class, 'doctor_id', 'id');
-    }
 }

@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->string('slug');
             $table->foreignId('poliklink_id')->constrained()->onDelete('cascade');
-            $table->unsignedBigInteger('patient_id');
+            $table->unsignedBigInteger('doctor');
             $table->boolean('has_started');
             $table->timestamps();
             $table->softDeletes();
 
-           
+            $table->foreign('doctor')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

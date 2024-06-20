@@ -20,6 +20,6 @@ class Schedule extends Model
     }
 
     public function owner(){
-        return $this->belongsTo(User::class, 'patient_id', 'id');
+        return $this->belongsTo(User::class, 'doctor', 'id');
     }
 }
